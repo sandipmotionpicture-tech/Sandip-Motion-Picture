@@ -3,23 +3,25 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sandip Motion Pictures | Cinematic Storytelling</title>
+<title>Sandip Motion Pictures | Premium Editorial</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
-/* --- 1. CORE VARIABLES & RESET --- */
+/* --- 1. CORE VARIABLES (White Theme) --- */
 :root {
-    --bg: #050505;
-    --panel: #111113;
-    --gold: #c7a76d;
-    --text: #ffffff;
-    --muted: #9a9a9a;
-    --overlay: rgba(0, 0, 0, 0.95);
+    --bg: #FFFFFF;
+    --panel: #F5F5F7; /* Apple-style light gray */
+    --gold: #D4AF37; /* Metallic Gold */
+    --text: #1d1d1f; /* Apple's Deep Dark Gray */
+    --muted: #86868b; /* Apple's Muted Gray */
+    --overlay: rgba(255, 255, 255, 0.85);
+    --border: rgba(0, 0, 0, 0.08);
+    
     --font-head: 'Playfair Display', serif;
     --font-body: 'Poppins', sans-serif;
 }
@@ -36,35 +38,61 @@ body {
 }
 
 /* --- 2. TYPOGRAPHY --- */
-h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; }
-h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
-h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--text); }
-p { color: var(--muted); font-weight: 300; }
-.gold-text { color: var(--gold); }
-.uppercase { text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 600; color: var(--gold); display: block; margin-bottom: 10px; }
+h1, h2, h3, h4 { font-family: var(--font-head); color: var(--text); }
+h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 25px; letter-spacing: -1px; }
+h2 { font-size: 2.8rem; margin-bottom: 1rem; }
+p { color: var(--muted); font-weight: 400; font-size: 1.05rem; }
 
-/* --- 3. NAVIGATION --- */
-header {
-    position: fixed; top: 0; width: 100%;
-    background: rgba(5, 5, 5, 0.85);
-    backdrop-filter: blur(12px);
-    padding: 20px 6%;
-    display: flex; justify-content: space-between; align-items: center;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+.gold-text { color: var(--gold); font-style: italic; }
+.uppercase { 
+    text-transform: uppercase; letter-spacing: 3px; 
+    font-size: 11px; font-weight: 700; 
+    color: var(--gold); display: block; margin-bottom: 15px; 
 }
 
-.logo {
-    font-family: var(--font-body);
-    font-weight: 700; letter-spacing: 2px;
-    font-size: 1.1rem; color: var(--text);
+/* --- 3. THE FROSTED GLASS HEADER (Your Code) --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px; /* Slight increase for breathing room */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6%;
+    z-index: 2000;
+    
+    /* Apple/Airbnb Style Glass */
+    background: rgba(255, 255, 255, 0.75); 
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-bottom: 1px solid var(--border);
+}
+
+/* THE HEARTBEAT BRAND NAME */
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    letter-spacing: 3px;
     text-transform: uppercase;
+    animation: cinematic-heartbeat 3s ease-in-out infinite; /* Slowed down slightly for elegance */
+    cursor: default;
 }
 
-nav { display: flex; align-items: center; gap: 30px; }
+/* THE CINEMATIC HEARTBEAT LOGIC */
+@keyframes cinematic-heartbeat {
+    0%, 40%, 100% { transform: scale(1); text-shadow: none; }
+    10% { transform: scale(1.02); text-shadow: 0 0 15px rgba(212, 175, 55, 0.3); color: #D4AF37; }
+    20% { transform: scale(1); text-shadow: none; }
+    30% { transform: scale(1.02); text-shadow: 0 0 15px rgba(212, 175, 55, 0.3); color: #D4AF37; }
+}
+
+nav { display: flex; align-items: center; gap: 35px; }
 nav a {
-    color: var(--muted); text-decoration: none;
-    font-size: 13px; font-weight: 500; text-transform: uppercase;
+    color: var(--text); text-decoration: none;
+    font-size: 12px; font-weight: 600; text-transform: uppercase;
     transition: 0.3s; letter-spacing: 1px;
 }
 nav a:hover { color: var(--gold); }
@@ -73,140 +101,148 @@ nav a:hover { color: var(--gold); }
 .dropdown { position: relative; display: inline-block; }
 .dropdown-content {
     display: none; position: absolute;
-    background-color: var(--panel);
-    min-width: 160px; top: 100%; left: 0;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
-    z-index: 1; border: 1px solid rgba(255,255,255,0.05);
+    background-color: #FFFFFF;
+    min-width: 180px; top: 100%; right: 0;
+    box-shadow: 0px 20px 40px rgba(0,0,0,0.1);
+    z-index: 1; border: 1px solid var(--border);
+    border-radius: 8px; padding: 10px 0;
 }
 .dropdown-content a {
-    color: var(--muted); padding: 12px 16px;
+    color: var(--text); padding: 12px 20px;
     text-decoration: none; display: block;
-    font-size: 12px;
+    font-size: 12px; text-transform: none;
 }
 .dropdown:hover .dropdown-content { display: block; }
-.dropdown-content a:hover { background-color: #1a1a1d; color: var(--gold); }
+.dropdown-content a:hover { background-color: var(--panel); color: var(--gold); }
 
 /* --- 4. HERO SECTION --- */
 .hero {
     min-height: 100vh;
-    display: grid; grid-template-columns: 1.2fr 0.8fr;
-    align-items: center; padding: 0 6%;
-    background: radial-gradient(circle at top right, #1a1a1e 0%, var(--bg) 60%);
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; padding: 120px 6% 0;
+    gap: 60px;
 }
 .hero-img-container {
-    position: relative; width: 100%; height: 60vh;
-    overflow: hidden; border-radius: 4px;
-    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.8);
+    position: relative; width: 100%; height: 75vh;
+    overflow: hidden; border-radius: 12px;
+    box-shadow: 0 40px 80px -20px rgba(0,0,0,0.15); /* Softer shadow for white theme */
 }
 .hero-img-container img {
     width: 100%; height: 100%; object-fit: cover;
-    filter: sepia(20%) contrast(1.1);
+    /* Clean image, no sepia for modern look */
 }
 
 /* --- 5. PROFILE & VALUES --- */
-.section-pad { padding: 100px 6%; }
+.section-pad { padding: 120px 6%; }
 .values-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px; margin-top: 50px;
+    gap: 30px; margin-top: 60px;
 }
 .value-card {
-    background: var(--panel); padding: 30px;
-    border-left: 1px solid rgba(255,255,255,0.1);
-    transition: 0.3s;
+    background: var(--panel); padding: 40px 30px;
+    border-radius: 12px;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.value-card:hover { border-left: 1px solid var(--gold); transform: translateX(5px); }
-.value-card h4 { font-family: var(--font-body); font-size: 1rem; color: var(--text); margin-bottom: 8px; font-weight: 600; }
-.value-card p { font-size: 0.85rem; }
+.value-card:hover { 
+    background: #FFFFFF;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08); 
+    transform: translateY(-5px);
+}
+.value-card h4 { font-family: var(--font-body); font-size: 1.1rem; margin-bottom: 10px; font-weight: 600; }
+.value-card p { font-size: 0.9rem; line-height: 1.6; }
 
-/* --- 6. IMMERSIVE SERVICE PORTAL (Grid) --- */
-.services-container { margin-top: 40px; }
+/* --- 6. IMMERSIVE SERVICE PORTAL (Clean List) --- */
+.services-container { margin-top: 60px; border-top: 1px solid var(--border); }
 .service-row {
-    display: flex; border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex; border-bottom: 1px solid var(--border);
     justify-content: space-between; align-items: center;
-    padding: 40px 0; cursor: pointer; transition: 0.3s;
+    padding: 50px 20px; cursor: pointer; transition: 0.4s;
 }
-.service-row:hover { background: rgba(255,255,255,0.02); padding-left: 20px; }
-.service-row h3 { font-size: 1.8rem; font-family: var(--font-head); }
-.service-icon { font-size: 1.5rem; color: var(--gold); opacity: 0; transition: 0.3s; }
+.service-row:hover { background: var(--panel); padding-left: 40px; }
+.service-row h3 { font-size: 2.2rem; margin-bottom: 5px; }
+.service-icon { font-size: 1.5rem; color: var(--gold); opacity: 0; transition: 0.4s; }
 .service-row:hover .service-icon { opacity: 1; transform: translateX(-10px); }
 
-/* --- 7. CINEMATIC MODAL (The Drawer) --- */
+/* --- 7. CINEMATIC MODAL (White Glass) --- */
 .modal-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: var(--overlay);
-    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.6); /* Light overlay */
+    backdrop-filter: blur(20px);
     z-index: 2000;
-    display: none; /* Hidden by default */
-    align-items: center; justify-content: center;
+    display: none; align-items: center; justify-content: center;
     opacity: 0; transition: opacity 0.5s ease;
 }
 .modal-content {
-    width: 90%; max-width: 1200px; height: 80vh;
-    display: grid; grid-template-columns: 1fr 1fr;
-    background: var(--panel);
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 50px 100px rgba(0,0,0,0.8);
-    transform: translateY(30px); transition: transform 0.5s ease;
+    width: 90%; max-width: 1200px; height: 85vh;
+    display: grid; grid-template-columns: 1fr 1.2fr;
+    background: #FFFFFF;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.15); /* Soft, deep shadow */
+    border-radius: 20px;
+    transform: scale(0.95); transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     overflow: hidden;
 }
 /* Modal Open State */
 .modal-overlay.active { display: flex; opacity: 1; }
-.modal-overlay.active .modal-content { transform: translateY(0); }
+.modal-overlay.active .modal-content { transform: scale(1); }
 
-.modal-text { padding: 60px; overflow-y: auto; position: relative; }
+.modal-text { padding: 80px; overflow-y: auto; position: relative; }
 .modal-close {
-    position: absolute; top: 20px; right: 20px;
-    font-size: 24px; color: var(--muted); cursor: pointer;
-    z-index: 10; transition: 0.3s;
+    position: absolute; top: 30px; right: 30px;
+    font-size: 24px; color: var(--text); cursor: pointer;
+    transition: 0.3s;
 }
-.modal-close:hover { color: var(--gold); }
+.modal-close:hover { color: var(--gold); transform: rotate(90deg); }
 .modal-image {
     width: 100%; height: 100%;
     background-size: cover; background-position: center;
-    filter: grayscale(100%); transition: 1s;
 }
-.modal-content:hover .modal-image { filter: grayscale(0%); }
 
-/* --- 8. FOOTER --- */
+/* --- 8. FOOTER (Dark Anchor) --- */
 footer {
-    background: #020202; padding: 80px 6% 30px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    background: #111111; /* Keep footer dark for contrast/anchoring */
+    color: white;
+    padding: 100px 6% 40px;
 }
-.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; }
-.social-links { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+footer h3, footer h4, footer a, footer p { color: white; }
+footer p { color: #888; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; }
+
+.social-links { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 25px; }
 .social-links a {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: rgba(255,255,255,0.05); color: var(--muted);
+    width: 45px; height: 45px; border-radius: 50%;
+    background: rgba(255,255,255,0.1); color: white;
     display: flex; align-items: center; justify-content: center;
-    text-decoration: none; transition: 0.3s; border: 1px solid transparent;
+    text-decoration: none; transition: 0.3s;
 }
-.social-links a:hover { border-color: var(--gold); color: var(--gold); }
-.copyright {
-    text-align: center; margin-top: 60px; padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    font-size: 12px; color: #555;
-}
+.social-links a:hover { background: var(--gold); color: black; transform: translateY(-3px); }
 
 /* Floating Hire Button */
 .fab {
     position: fixed; bottom: 30px; right: 30px;
-    background: var(--gold); color: #000;
-    padding: 15px 30px; border-radius: 50px;
+    background: #000000; color: #FFFFFF; /* High contrast button */
+    padding: 18px 35px; border-radius: 50px;
     font-weight: 600; text-decoration: none;
-    box-shadow: 0 10px 30px rgba(199, 167, 109, 0.3);
-    transition: 0.3s; z-index: 900;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: 0.3s; z-index: 1500;
     font-size: 14px; letter-spacing: 1px;
 }
-.fab:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(199, 167, 109, 0.5); }
+.fab:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.3); background: var(--gold); color:black; }
 
 /* --- RESPONSIVE --- */
 @media(max-width: 900px) {
-    .hero { grid-template-columns: 1fr; text-align: center; padding-top: 100px; gap: 40px; }
-    h1 { font-size: 2.5rem; }
-    header { padding: 15px 5%; }
-    nav { display: none; } /* Simplified for demo - usually add hamburger menu here */
-    .modal-content { grid-template-columns: 1fr; height: 90vh; }
-    .modal-image { height: 200px; order: -1; }
+    .main-header { padding: 0 5%; }
+    .hero { grid-template-columns: 1fr; text-align: center; padding-top: 150px; }
+    h1 { font-size: 3rem; }
+    .hero-img-container { height: 50vh; order: -1; }
+    
+    /* Mobile Nav Simplification */
+    nav { position: fixed; bottom: 0; left:0; width: 100%; background: white; padding: 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.05); justify-content: space-around; gap:0; border-top: 1px solid var(--border); }
+    nav a { font-size: 10px; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+    
+    .modal-content { grid-template-columns: 1fr; height: 100vh; width: 100%; border-radius: 0; }
+    .modal-image { height: 250px; order: -1; }
+    .modal-text { padding: 40px 20px; }
+    
     .footer-grid { grid-template-columns: 1fr; text-align: center; }
     .social-links { justify-content: center; }
 }
@@ -215,8 +251,8 @@ footer {
 
 <body>
 
-<header>
-    <div class="logo">Sandip Motion Pictures</div>
+<header class="main-header">
+    <div class="brand-name">Sandip Motion Pictures</div>
     <nav>
         <a href="#profile">Profile</a>
         <a href="mailto:sandipmotionpicture@gmail.com">Premium</a>
@@ -250,7 +286,7 @@ footer {
 <section id="profile" class="section-pad">
     <span class="uppercase">Our DNA</span>
     <h2>About The Production</h2>
-    <p style="max-width: 700px;">
+    <p style="max-width: 700px; margin-bottom: 50px;">
         We believe in radical clarity and truth-driven narratives. Our work blends cinematic precision with human authenticity—built collaboratively, executed boldly, and refined relentlessly.
     </p>
 
@@ -282,7 +318,7 @@ footer {
     </div>
 </section>
 
-<section id="services" class="section-pad" style="background: #09090b;">
+<section id="services" class="section-pad">
     <span class="uppercase">What We Do</span>
     <h2>Service Portal</h2>
     <p style="margin-bottom: 40px;">Select a division to explore infrastructure.</p>
@@ -291,7 +327,7 @@ footer {
         <div class="service-row" onclick="openModal('modal-film')">
             <div>
                 <h3>Film & Production Logistics</h3>
-                <p style="font-size: 13px; margin-top:5px;">Scouting, Permits, Gear Support</p>
+                <p class="uppercase" style="color:var(--muted); margin-top:5px;">Scouting / Permits / Gear</p>
             </div>
             <i class="fas fa-arrow-right service-icon"></i>
         </div>
@@ -299,7 +335,7 @@ footer {
         <div class="service-row" onclick="openModal('modal-travel')">
             <div>
                 <h3>Travel & Tourist Support</h3>
-                <p style="font-size: 13px; margin-top:5px;">Visual Guides & Concierge</p>
+                <p class="uppercase" style="color:var(--muted); margin-top:5px;">Guides / Concierge / Visuals</p>
             </div>
             <i class="fas fa-arrow-right service-icon"></i>
         </div>
@@ -307,7 +343,7 @@ footer {
         <div class="service-row" onclick="openModal('modal-sports')">
             <div>
                 <h3>Sports & Event Media</h3>
-                <p style="font-size: 13px; margin-top:5px;">Live Coverage & Athlete Branding</p>
+                <p class="uppercase" style="color:var(--muted); margin-top:5px;">Live Coverage / Branding</p>
             </div>
             <i class="fas fa-arrow-right service-icon"></i>
         </div>
@@ -315,7 +351,7 @@ footer {
         <div class="service-row" onclick="openModal('modal-digital')">
             <div>
                 <h3>Digital Marketing & Brand Growth</h3>
-                <p style="font-size: 13px; margin-top:5px;">Cinematic Ads & Strategy</p>
+                <p class="uppercase" style="color:var(--muted); margin-top:5px;">Ads / Strategy / SEO</p>
             </div>
             <i class="fas fa-arrow-right service-icon"></i>
         </div>
@@ -325,18 +361,16 @@ footer {
 <footer>
     <div class="footer-grid">
         <div>
-            <h3>Sandip Motion Pictures</h3>
-            <p style="margin-top:10px;">Authentic storytelling through cinematic craft.</p>
+            <h3 style="color:white; letter-spacing:2px;">SMP</h3>
+            <p style="margin-top:20px; font-size:13px;">Authentic storytelling through cinematic craft.</p>
             
             <div class="social-links">
                 <a href="https://www.facebook.com/share/19eN5bemcZ/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://youtube.com/@sandipmotionpictures" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
                 <a href="https://www.tiktok.com/@ur_sandip" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
                 <a href="https://sandipmotionpictures.blogspot.com" target="_blank" title="Blog"><i class="fas fa-blog"></i></a>
-                
                 <a href="#" title="X / Twitter"><i class="fab fa-x-twitter"></i></a>
                 <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" title="Pinterest"><i class="fab fa-pinterest"></i></a>
                 <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="#" title="FOAP"><i class="fas fa-camera"></i></a>
             </div>
@@ -344,22 +378,22 @@ footer {
 
         <div>
             <h4 style="color:white; margin-bottom:20px;">Contact</h4>
-            <p><a href="mailto:sandipmotionpicture@gmail.com" style="color:var(--gold); text-decoration:none;">sandipmotionpicture@gmail.com</a></p>
+            <p><a href="mailto:sandipmotionpicture@gmail.com" style="color:#ffffff; text-decoration:none; border-bottom:1px solid #333;">sandipmotionpicture@gmail.com</a></p>
             <p style="margin-top:10px;">Kathmandu, Nepal</p>
         </div>
 
         <div>
             <h4 style="color:white; margin-bottom:20px;">Status</h4>
             <p>Visitor Count: <span id="count" style="color:var(--gold); font-weight:bold;">0</span></p>
-            <p style="font-size:12px; margin-top:10px;">System: Online</p>
+            <p style="font-size:12px; margin-top:10px; color:#555;">System: Online</p>
         </div>
     </div>
-    <div class="copyright">
+    <div style="text-align:center; margin-top:80px; font-size:11px; color:#444; text-transform:uppercase; letter-spacing:1px;">
         © 2025 Sandip Motion Pictures. All Rights Reserved.
     </div>
 </footer>
 
-<a href="mailto:sandipmotionpicture@gmail.com" class="fab">Hire Me</a>
+<a href="mailto:sandipmotionpicture@gmail.com" class="fab">HIRE ME</a>
 
 <div id="modal-film" class="modal-overlay">
     <div class="modal-content">
@@ -369,10 +403,10 @@ footer {
             <h2>Film & Production</h2>
             <p>Complete cinematic support across Nepal's diverse terrain.</p>
             <br>
-            <ul style="list-style:none; color:var(--muted);">
-                <li style="margin-bottom:10px;"><i class="fas fa-check" style="color:var(--gold); margin-right:10px;"></i> Location Scouting (Himalayas to Terai)</li>
-                <li style="margin-bottom:10px;"><i class="fas fa-check" style="color:var(--gold); margin-right:10px;"></i> Government Permit Processing</li>
-                <li style="margin-bottom:10px;"><i class="fas fa-check" style="color:var(--gold); margin-right:10px;"></i> Rental Gear Coordination</li>
+            <ul style="list-style:none; color:var(--muted); margin-top:20px;">
+                <li style="margin-bottom:15px;"><i class="fas fa-check" style="color:var(--gold); margin-right:15px;"></i> Location Scouting (Himalayas to Terai)</li>
+                <li style="margin-bottom:15px;"><i class="fas fa-check" style="color:var(--gold); margin-right:15px;"></i> Government Permit Processing</li>
+                <li style="margin-bottom:15px;"><i class="fas fa-check" style="color:var(--gold); margin-right:15px;"></i> Rental Gear Coordination</li>
             </ul>
         </div>
         <div class="modal-image" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=800&auto=format&fit=crop');"></div>
@@ -385,8 +419,6 @@ footer {
             <i class="fas fa-times modal-close" onclick="closeModal('modal-travel')"></i>
             <span class="uppercase">Concierge</span>
             <h2>Travel Support</h2>
-            <p>Visual guides and logistical support for travel content creators.</p>
-            <br>
             <p>We ensure you capture the soul of the location without worrying about the route.</p>
         </div>
         <div class="modal-image" style="background-image: url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop');"></div>
@@ -400,8 +432,7 @@ footer {
             <span class="uppercase">Action</span>
             <h2>Sports Media</h2>
             <p>High-shutter speed coverage for high-octane events.</p>
-            <br>
-            <p>Specializing in Cricket, Football, and Adventure Sports documentation.</p>
+            <p style="margin-top:10px;">Specializing in Cricket, Football, and Adventure Sports documentation.</p>
         </div>
         <div class="modal-image" style="background-image: url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=800&auto=format&fit=crop');"></div>
     </div>
@@ -414,8 +445,7 @@ footer {
             <span class="uppercase">Growth</span>
             <h2>Digital Strategy</h2>
             <p>Cinematic ads designed to convert.</p>
-            <br>
-            <p>SMM, Influencer Strategy, and SEO Blog writing for brand dominance.</p>
+            <p style="margin-top:10px;">SMM, Influencer Strategy, and SEO Blog writing for brand dominance.</p>
         </div>
         <div class="modal-image" style="background-image: url('https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=800&auto=format&fit=crop');"></div>
     </div>
@@ -428,20 +458,19 @@ footer {
     localStorage.setItem("visit", c);
     document.getElementById("count").innerText = c;
 
-    // 2. Modal Logic (The Inner World)
+    // 2. Modal Logic
     function openModal(id) {
         const modal = document.getElementById(id);
         modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Lock scroll
+        document.body.style.overflow = 'hidden'; 
     }
 
     function closeModal(id) {
         const modal = document.getElementById(id);
         modal.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Unlock scroll
+        document.body.style.overflow = 'auto'; 
     }
 
-    // Close modal if clicking outside content
     window.onclick = function(event) {
         if (event.target.classList.contains('modal-overlay')) {
             event.target.classList.remove('active');
