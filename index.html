@@ -11,25 +11,18 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
-/* --- 2. DESIGN SYSTEM (WHITE EDITORIAL THEME) --- */
 :root {
-    /* Core Palette */
-    --bg: #FFFFFF;           /* Pure White Background */
-    --panel: #F5F5F7;        /* Light Gray for Cards/Sections */
-    --gold: #D4AF37;         /* Metallic Gold Accent */
-    --text: #1d1d1f;         /* Deep Charcoal for Primary Text */
-    --muted: #86868b;        /* Muted Gray for Secondary Text */
-    
-    /* UI Elements */
-    --overlay: rgba(255, 255, 255, 0.85); /* Frosted Glass Overlay */
-    --border: rgba(0, 0, 0, 0.08);        /* Subtle Border */
-    
-    /* Typography */
+    --bg: #FFFFFF;
+    --panel: #F5F5F7;
+    --gold: #D4AF37;
+    --text: #1d1d1f;
+    --muted: #86868b;
+    --overlay: rgba(255, 255, 255, 0.85);
+    --border: rgba(0, 0, 0, 0.08);
     --font-head: 'Playfair Display', serif;
     --font-body: 'Poppins', sans-serif;
 }
 
-/* --- 3. GLOBAL RESET & BASE STYLES --- */
 * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
 html { scroll-behavior: smooth; }
 
@@ -39,10 +32,9 @@ body {
     font-family: var(--font-body);
     line-height: 1.7;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased; /* Smoother fonts on Mac */
+    -webkit-font-smoothing: antialiased;
 }
 
-/* --- 4. TYPOGRAPHY COMPONENT --- */
 h1, h2, h3, h4 { font-family: var(--font-head); color: var(--text); }
 h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 25px; letter-spacing: -1px; }
 h2 { font-size: 2.8rem; margin-bottom: 1rem; }
@@ -57,20 +49,16 @@ p { color: var(--muted); font-weight: 400; font-size: 1.05rem; }
 }
 .section-pad { padding: 120px 6%; }
 
-/* --- 5. HEADER COMPONENT (FROSTED GLASS) --- */
 .main-header {
     position: fixed; top: 0; width: 100%; height: 80px;
     display: flex; justify-content: space-between; align-items: center;
     padding: 0 6%; z-index: 2000;
-    
-    /* Glassmorphism Effect */
     background: rgba(255, 255, 255, 0.75); 
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     border-bottom: 1px solid var(--border);
 }
 
-/* Cinematic Heartbeat Animation */
 .brand-name {
     font-family: var(--font-head); font-size: 1.4rem; font-weight: 700;
     color: var(--text); letter-spacing: 3px; text-transform: uppercase;
@@ -84,7 +72,6 @@ p { color: var(--muted); font-weight: 400; font-size: 1.05rem; }
     20% { transform: scale(1); text-shadow: none; }
 }
 
-/* Navigation */
 nav { display: flex; align-items: center; gap: 35px; }
 nav a {
     color: var(--text); text-decoration: none;
@@ -93,7 +80,6 @@ nav a {
 }
 nav a:hover { color: var(--gold); }
 
-/* Dropdown Menu */
 .dropdown { position: relative; display: inline-block; }
 .dropdown-content {
     display: none; position: absolute;
@@ -102,13 +88,10 @@ nav a:hover { color: var(--gold); }
     z-index: 1; border: 1px solid var(--border);
     border-radius: 8px; padding: 10px 0;
 }
-.dropdown-content a {
-    padding: 12px 20px; text-transform: none;
-}
+.dropdown-content a { padding: 12px 20px; text-transform: none; }
 .dropdown:hover .dropdown-content { display: block; }
 .dropdown-content a:hover { background-color: var(--panel); color: var(--gold); }
 
-/* --- 6. HERO SECTION --- */
 .hero {
     min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
     align-items: center; padding: 120px 6% 0; gap: 60px;
@@ -120,7 +103,6 @@ nav a:hover { color: var(--gold); }
 }
 .hero-img-container img { width: 100%; height: 100%; object-fit: cover; }
 
-/* --- 7. CARDS & GRID SYSTEM --- */
 .values-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px; margin-top: 60px;
@@ -135,7 +117,6 @@ nav a:hover { color: var(--gold); }
 }
 .value-card h4 { font-family: var(--font-body); font-size: 1.1rem; margin-bottom: 10px; font-weight: 600; }
 
-/* --- 8. SERVICE PORTAL (INTERACTIVE LIST) --- */
 .services-container { margin-top: 60px; border-top: 1px solid var(--border); }
 .service-row {
     display: flex; border-bottom: 1px solid var(--border);
@@ -147,7 +128,6 @@ nav a:hover { color: var(--gold); }
 .service-icon { font-size: 1.5rem; color: var(--gold); opacity: 0; transition: 0.4s; }
 .service-row:hover .service-icon { opacity: 1; transform: translateX(-10px); }
 
-/* --- 9. MODAL COMPONENT (THE CINEMATIC DRAWER) --- */
 .modal-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: var(--overlay); backdrop-filter: blur(20px);
@@ -174,7 +154,6 @@ nav a:hover { color: var(--gold); }
 .modal-close:hover { color: var(--gold); transform: rotate(90deg); }
 .modal-image { width: 100%; height: 100%; background-size: cover; background-position: center; }
 
-/* --- 10. FOOTER COMPONENT --- */
 footer {
     background: var(--bg); color: var(--text);
     padding: 100px 6% 40px; border-top: 1px solid var(--border);
@@ -183,24 +162,22 @@ footer {
 footer a { color: var(--text); text-decoration: none; transition: 0.3s; }
 footer a:hover { color: var(--gold); }
 
-/* Social Icons */
 .social-links { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 25px; }
 .social-links a {
     width: 45px; height: 45px; border-radius: 50%;
     background: var(--panel); color: var(--text);
     display: flex; align-items: center; justify-content: center;
     border: 1px solid var(--border);
+    transition: 0.3s;
 }
 .social-links a:hover { background: var(--gold); color: black; border-color: var(--gold); transform: translateY(-3px); }
 
-/* Copyright */
 .copyright {
     text-align: center; margin-top: 80px; padding-top: 30px;
     border-top: 1px solid var(--border); font-size: 11px;
     color: var(--muted); text-transform: uppercase; letter-spacing: 1px;
 }
 
-/* --- 11. FLOATING ACTION BUTTON (FAB) --- */
 .fab {
     position: fixed; bottom: 30px; right: 30px;
     background: var(--gold); color: #000000;
@@ -216,33 +193,232 @@ footer a:hover { color: var(--gold); }
     background: #000000; color: var(--gold);
 }
 
-/* --- 12. RESPONSIVE DESIGN --- */
+/* RESPONSIVE DESIGN */
+@media(max-width: 1200px) {
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.5rem; }
+    h3 { font-size: 1.4rem; }
+    .section-pad { padding: 100px 5%; }
+}
+
 @media(max-width: 900px) {
-    .main-header { padding: 0 5%; }
-    .hero { grid-template-columns: 1fr; text-align: center; padding-top: 150px; }
-    h1 { font-size: 3rem; }
-    .hero-img-container { height: 50vh; order: -1; }
+    .main-header { 
+        padding: 0 5%; 
+        height: 70px;
+    }
     
-    /* Mobile Navigation Bottom Bar */
+    .brand-name { 
+        font-size: 1.1rem; 
+        letter-spacing: 2px;
+    }
+    
     nav { 
-        position: fixed; bottom: 0; left:0; width: 100%; 
-        background: var(--bg); padding: 15px; 
+        position: fixed; 
+        bottom: 0; 
+        left: 0; 
+        width: 100%; 
+        background: var(--bg); 
+        padding: 15px 10px; 
         box-shadow: 0 -5px 20px rgba(0,0,0,0.05); 
-        justify-content: space-around; gap:0; 
+        justify-content: space-around; 
+        gap: 5px; 
         border-top: 1px solid var(--border); 
     }
-    nav a { font-size: 10px; display: flex; flex-direction: column; align-items: center; gap: 5px; }
-    .dropdown-content { bottom: 100%; top: auto; }
     
-    /* Mobile Modal */
-    .modal-content { grid-template-columns: 1fr; height: 100%; width: 100%; border-radius: 0; }
-    .modal-image { height: 300px; order: -1; }
-    .modal-text { padding: 40px 20px; }
+    nav a { 
+        font-size: 9px; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        gap: 5px;
+        padding: 5px;
+    }
     
-    /* Mobile Footer */
-    .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-    .social-links { justify-content: center; }
-    .fab { bottom: 90px; right: 20px; padding: 15px 30px; }
+    .dropdown-content { 
+        bottom: 100%; 
+        top: auto; 
+        right: 50%;
+        transform: translateX(50%);
+    }
+    
+    .hero { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        padding-top: 120px;
+        padding-bottom: 40px;
+        gap: 40px;
+    }
+    
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.2rem; }
+    p { font-size: 1rem; }
+    
+    .hero-img-container { 
+        height: 50vh; 
+        order: -1; 
+    }
+    
+    .section-pad { 
+        padding: 80px 5% 100px; 
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .value-card {
+        padding: 30px 25px;
+    }
+    
+    .services-container {
+        margin-top: 40px;
+    }
+    
+    .service-row {
+        padding: 35px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .service-row:hover {
+        padding-left: 15px;
+    }
+    
+    .service-row h3 {
+        font-size: 1.5rem;
+    }
+    
+    .service-icon {
+        align-self: flex-end;
+    }
+    
+    .modal-content { 
+        grid-template-columns: 1fr; 
+        height: 100%; 
+        width: 100%; 
+        border-radius: 0; 
+        max-width: none;
+    }
+    
+    .modal-image { 
+        height: 250px; 
+        order: -1; 
+    }
+    
+    .modal-text { 
+        padding: 40px 25px; 
+    }
+    
+    .modal-close {
+        top: 20px;
+        right: 20px;
+        font-size: 20px;
+    }
+    
+    footer {
+        padding: 60px 5% 100px;
+    }
+    
+    .footer-grid { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        gap: 40px; 
+    }
+    
+    .social-links { 
+        justify-content: center; 
+    }
+    
+    .copyright {
+        margin-top: 60px;
+        padding-top: 25px;
+    }
+    
+    .fab { 
+        bottom: 90px; 
+        right: 20px; 
+        padding: 15px 25px;
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 600px) {
+    .brand-name {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+    
+    .hero {
+        padding-top: 100px;
+        gap: 30px;
+    }
+    
+    .hero-img-container {
+        height: 40vh;
+    }
+    
+    .section-pad {
+        padding: 60px 5% 100px;
+    }
+    
+    .service-row h3 {
+        font-size: 1.3rem;
+    }
+    
+    .value-card {
+        padding: 25px 20px;
+    }
+    
+    .modal-text {
+        padding: 30px 20px;
+    }
+    
+    .modal-image {
+        height: 200px;
+    }
+    
+    .fab {
+        padding: 12px 20px;
+        font-size: 11px;
+        bottom: 85px;
+        right: 15px;
+    }
+    
+    .social-links a {
+        width: 40px;
+        height: 40px;
+    }
+    
+    footer {
+        padding: 50px 5% 100px;
+    }
+}
+
+@media(max-width: 400px) {
+    .brand-name {
+        font-size: 0.75rem;
+    }
+    
+    nav a {
+        font-size: 8px;
+    }
+    
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.4rem; }
+    
+    .service-row {
+        padding: 25px 10px;
+    }
+    
+    .service-row h3 {
+        font-size: 1.1rem;
+    }
 }
 </style>
 </head>
@@ -314,7 +490,7 @@ footer a:hover { color: var(--gold); }
             <div><h3>Sports & Event Media</h3><p class="uppercase" style="color:var(--muted); margin-top:5px;">Live Coverage / Branding</p></div>
             <i class="fas fa-arrow-right service-icon"></i>
         </div>
-        <div class="Service-row" onclick="openModal ('modal-products')">
+        <div class="service-row" onclick="openModal('modal-products')">
             <div><h3>Local Product's</h3><p class="uppercase" style="color:var(--muted);margin-top:5px;">Organic / Traditional </p></div>
             <i class="fas fa-arrow-right service-icon"></i>
         </div>
@@ -400,7 +576,8 @@ footer a:hover { color: var(--gold); }
         <div class="modal-image" style="background-image: url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=800&auto=format&fit=crop');"></div>
     </div>
 </div>
-  <div id="modal-products" class="modal-overlay">
+
+<div id="modal-products" class="modal-overlay">
     <div class="modal-content">
         <div class="modal-text">  
             <i class="fas fa-times modal-close" onclick="closeModal('modal-products')"></i>  
@@ -410,7 +587,8 @@ footer a:hover { color: var(--gold); }
         </div>
         <div class="modal-image" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEij6wtN2dpRt6jEnrYYP1aqsGt_NvgT_Dx1Wz0Kl11Nd34lr3XKgAsNzR4cxeTyghT6X1_3jrYAMaJq6cZUx2xk7N61QsmRnRZFw8U_ero_fnVIa8YoOfD5AYsemtITJo0oTrVnws9y0aDHvGK8orBj9Js5Cywz2dvxNo_NNmgOsGHLfQoIwtxjTjGEX644/s1600/IMG-4065332c18922cd1e13aa223a0945eec-V.jpg?q=80&w=800&auto=format&fit=crop');"></div>
     </div>
-        
+</div>
+
 <div id="modal-digital" class="modal-overlay">
     <div class="modal-content">
         <div class="modal-text">
@@ -424,11 +602,13 @@ footer a:hover { color: var(--gold); }
 </div>
 
 <script>
-    // 1. Visitor Counter
-    let c = localStorage.getItem("visit") || 0; c++; localStorage.setItem("visit", c);
+    // Visitor Counter
+    let c = localStorage.getItem("visit") || 0; 
+    c++; 
+    localStorage.setItem("visit", c);
     document.getElementById("count").innerText = c;
 
-    // 2. Modal Logic
+    // Modal Logic
     function openModal(id) {
         document.getElementById(id).classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -443,7 +623,3 @@ footer a:hover { color: var(--gold); }
             document.body.style.overflow = 'auto';
         }
     }
-</script>
-
-</body>
-</html>
